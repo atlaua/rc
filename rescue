@@ -1,0 +1,9 @@
+#!/bin/execlineb -P
+
+ifelse { s6-test -e /etc/rescue }
+{
+    foreground { s6-echo -- "Dropping to rescue shell." }
+    /bin/sh -i
+}
+foreground { s6-echo -- "Touch /etc/rescue to permit rescue shells." }
+s6-sleep 300
