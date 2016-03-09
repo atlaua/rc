@@ -2,10 +2,4 @@
 
 cd /etc/s6/
 
-chown logger:logger run/uncaught-logs
-chmod 2700 run/uncaught-logs
-
-rm -f run/service/s6-svscan-log/fifo
-mkfifo -m0600 run/service/s6-svscan-log/fifo
-
 restorecon -RFv -e /etc/s6/.git .
