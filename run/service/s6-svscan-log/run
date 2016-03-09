@@ -3,5 +3,5 @@
 redirfd -w 2 /dev/console
 redirfd -w 1 /dev/null
 redirfd -rnb 0 fifo
-s6-applyuidgid -u 421 -g 421 --
+s6-setuidgid logger
 s6-log -bp -- t /run/uncaught-logs
