@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
 
-s6-echo -- "rc.init"
-#if { s6-rc-init -t 2000 -c /etc/s6/compiled -l /run/s6-rc /run/service }
+if { s6-mkdir /run/s6-rc.d }
+if { s6-rc-init -t 2000 -c /etc/s6/compiled -l /run/s6-rc.d/s6-rc /run/service }
 #s6-rc -u change ok-all
