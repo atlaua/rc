@@ -5,7 +5,7 @@
 /bin/redirfd -a 1 /run/init-log
 /bin/redirfd -a 2 /run/init-log
 
-/bin/export PATH "/usr/bin:/bin"
+/bin/export PATH "/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 /bin/cd /
 s6-setsid -b --
 umask 022

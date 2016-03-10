@@ -3,5 +3,12 @@
 #redirfd -w 2 /dev/console
 #redirfd -w 1 /dev/null
 redirfd -rnb 0 fifo
-s6-setuidgid logger
+
+s6-envuidgid logger
+foreground { s6-mkdir /run/uncaught-logs }
+if { s6-chmod 2700 /run/uncaught-logs }
+if { s6-chown -U /run/uncaught-logs }
+
+unexport ?
+s6-applyuidgid -zU
 s6-log -bp -- t /run/uncaught-logs
