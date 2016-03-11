@@ -5,7 +5,7 @@ redirfd -w 2 /dev/console
 fdmove -c 1 2
 
 foreground { s6-svc -X -- /run/service/s6-svscan-log }
-unexport ?
+emptyenv -c
 wait -r -- { }
 
 /etc/s6/init-shutdown ${@}

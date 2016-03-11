@@ -9,6 +9,6 @@ foreground { s6-mkdir /run/uncaught-logs }
 if { s6-chmod 2700 /run/uncaught-logs }
 if { s6-chown -U /run/uncaught-logs }
 
-unexport ?
+emptyenv -c
 s6-applyuidgid -zU
 s6-log -bp -- t /run/uncaught-logs
