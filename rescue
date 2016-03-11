@@ -1,9 +1,14 @@
 #!/bin/execlineb -P
 
+redirfd -r 0 /dev/console
+redirfd -w 1 /dev/console
+fdmove -c 2 1
+
 ifelse { s6-test -e /etc/rescue }
 {
     foreground { s6-echo -- "Dropping to rescue shell." }
     /bin/sh -i
 }
+
 foreground { s6-echo -- "Touch /etc/rescue to permit rescue shells." }
 s6-sleep 300
