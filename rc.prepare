@@ -1,0 +1,8 @@
+#!/bin/execlineb -P
+
+if { s6-mount -t devtmpfs devtmpfs /dev }
+if { s6-mount -t tmpfs -o mode=0755 tmpfs /run }
+
+if { s6-hiercopy /etc/s6/service /run/service }
+if { s6-mkfifo -m0600 /run/service/s6-svscan-log/fifo }
+if { /sbin/restorecon -RF /run }

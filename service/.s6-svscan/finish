@@ -8,4 +8,4 @@ foreground { s6-svc -X -- /run/service/s6-svscan-log }
 unexport ?
 wait -r -- { }
 
-/etc/s6/rc.shutdown ${@}
+/etc/s6/init-shutdown ${@}
