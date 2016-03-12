@@ -4,7 +4,7 @@ redirfd -r 0 /dev/null
 redirfd -w 1 /dev/console
 fdmove -c 2 1
 
-if { s6-mount -t tmpfs -o mode=0755 tmpfs /run }
+if { s6-mount -t tmpfs -o nodev,mode=0755,rootcontext=system_u:object_r:var_run_t none /run }
 if { s6-hiercopy /etc/s6/service /run/service }
 if { s6-mkfifo -m0600 /run/service/s6-svscan-log/fifo }
 if { /sbin/restorecon -RF /dev /run }
