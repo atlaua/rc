@@ -4,7 +4,7 @@ cd /
 redirfd -w 2 /dev/console
 fdmove -c 1 2
 
-foreground { s6-svc -X -- /run/service/s6-svscan-log }
+foreground { s6-svc -X -- /run/s6/service/s6-svscan-log }
 emptyenv -c
 wait -r -- { }
 
