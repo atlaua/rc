@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 
-redirfd -r 0 /dev/console
+redirfd -r 0 /dev/null
 redirfd -w 1 /dev/console
 fdmove -c 2 1
 
@@ -14,9 +14,14 @@ ifelse -nX
 }
 { /etc/s6/rescue }
 
-/bin/s6-envdir /etc/s6/env
-redirfd -r 0 /dev/null
-redirfd -wnb 1 /run/s6/service/s6-svscan-log/fifo
+foreground
+{
+    emptyenv -c
+    unexport PATH
+    s6-dumpenv /run/s6/env
+}
+emptyenv -p
+s6-envdir /etc/s6/env
 
 background
 {
@@ -27,6 +32,7 @@ background
 }
 
 emptyenv -c
-cd /run/s6/service
+redirfd -wnb 1 /run/s6/service/s6-svscan-log/fifo
 fdmove -c 2 1
+cd /run/s6/service
 s6-svscan -st0
