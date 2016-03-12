@@ -4,9 +4,10 @@ redirfd -r 0 /dev/console
 redirfd -w 1 /dev/console
 fdmove -c 2 1
 
-ifelse { import -D "" RESCUE s6-test -n ${RESCUE} }
+ifelse -X { redirfd -w 2 /dev/null importas -i RESCUE RESCUE }
 {
     foreground { s6-echo -- "Dropping to rescue shell." }
+    /bin/cd /
     /bin/sh -i
 }
 

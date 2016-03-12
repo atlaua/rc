@@ -6,10 +6,14 @@ s6-setsid -b --
 umask 022
 if { s6-echo -- "\ns6 init booting up...\n" }
 
-if { s6-mount -t proc none /proc }
-if { s6-mount -t devtmpfs none /dev }
-if { s6-mount -t sysfs none /sys }
-if { s6-mount -t selinuxfs none /sys/fs/selinux }
-if { load_policy -i }
+ifelse -nX
+{
+    if { s6-mount -t proc none /proc }
+    if { s6-mount -t devtmpfs none /dev }
+    if { s6-mount -t sysfs none /sys }
+    if { s6-mount -t selinuxfs none /sys/fs/selinux }
+    if { load_policy -i }
+}
+{ /etc/s6/rescue }
 
 /etc/s6/init-selinux

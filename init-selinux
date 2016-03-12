@@ -1,15 +1,20 @@
 #!/bin/execlineb -P
 
-redirfd -r 0 /dev/null
+redirfd -r 0 /dev/console
 redirfd -w 1 /dev/console
 fdmove -c 2 1
 
-if { s6-mount -t tmpfs -o nodev,mode=0755,rootcontext=system_u:object_r:var_run_t none /run }
-if { s6-hiercopy /etc/s6/service /run/service }
-if { s6-mkfifo -m0600 /run/service/s6-svscan-log/fifo }
-if { /sbin/restorecon -RF /dev /run }
+ifelse -nX
+{
+    if { s6-mount -t tmpfs -o nodev,mode=0755,rootcontext=system_u:object_r:var_run_t none /run }
+    if { s6-hiercopy /etc/s6/service /run/service }
+    if { s6-mkfifo -m0600 /run/service/s6-svscan-log/fifo }
+    if { /sbin/restorecon -RF /dev /run }
+}
+{ /etc/s6/rescue }
 
 s6-envdir -I -- /etc/s6/env
+redirfd -r 0 /dev/null
 redirfd -wnb 1 /run/service/s6-svscan-log/fifo
 
 background
