@@ -1,9 +1,15 @@
 #!/bin/execlineb -P
 
-if { /etc/s6/rc.prepare }
+redirfd -r 0 /dev/null
+redirfd -w 1 /dev/console
+fdmove -c 2 1
+
+if { s6-mount -t tmpfs -o mode=0755 tmpfs /run }
+if { s6-hiercopy /etc/s6/service /run/service }
+if { s6-mkfifo -m0600 /run/service/s6-svscan-log/fifo }
+if { /sbin/restorecon -RF /dev /run }
 
 s6-envdir -I -- /etc/s6/env
-redirfd -r 0 /dev/null
 redirfd -wnb 1 /run/service/s6-svscan-log/fifo
 
 background
