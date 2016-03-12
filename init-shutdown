@@ -16,5 +16,5 @@ foreground { s6-umount -a }
 foreground { s6-mount -o ro,remount /dev/root / }
 
 foreground { s6-echo "\nPerforming "${1}"." }
-#s6-${1}
-/etc/s6/rescue
+foreground { redirfd -r 0 /dev/console s6-head -n1 }
+s6-${1}
