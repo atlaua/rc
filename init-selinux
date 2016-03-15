@@ -21,7 +21,7 @@ foreground
     s6-dumpenv /run/s6/env
 }
 emptyenv -p
-s6-envdir /etc/s6/env
+s6-envdir /etc/s6/env/init
 
 background
 {
