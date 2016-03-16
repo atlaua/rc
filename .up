@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+
+cd /etc/s6
+if { rm -rf compiled }
+if { s6-rc-compile compiled source }
+if { restorecon -RF -e /etc/s6/.git . }

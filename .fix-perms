@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cd /etc/s6/
-
-restorecon -RFv -e /etc/s6/.git .
