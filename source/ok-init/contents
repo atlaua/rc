@@ -2,8 +2,9 @@ mount-dev
 mount-proc
 mount-sys
 
-mount-portage
+#mount-portage
 mount-swap
 
 init-sysctl
 init-tty
+init-net

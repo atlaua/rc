@@ -1,0 +1,5 @@
+s6-envdir /etc/s6/env/net
+import -is modules
+
+if { modprobe -a ${modules} }
+if { ethtool -s eth0 wol d }  # TODO: don't hardcode this

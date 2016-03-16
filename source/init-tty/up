@@ -5,8 +5,11 @@ multisubstitute
     import -i font
     import -i kbd
     import -is keymap
+    import -i module
     import -is ttys
 }
+
+if { modprobe ${module} }
 
 if
 {
