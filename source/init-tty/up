@@ -1,0 +1,21 @@
+s6-envdir /etc/s6/env/tty
+multisubstitute
+{
+    import -i encoding
+    import -i font
+    import -i kbd
+    import -is keymap
+    import -is ttys
+}
+
+if
+{
+    forx -o 0 tty { ${ttys} }
+    import -i tty
+
+    if { redirfd -w 1 /dev/${tty} s6-echo -n "\0x1b%${encoding}" }
+    if { setfont ${font} -C /dev/${tty} }
+    if { kbd_mode -${kbd} -C /dev/${tty} }
+}
+
+if { loadkeys -q ${keymap} }

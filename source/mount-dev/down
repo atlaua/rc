@@ -1,0 +1,4 @@
+# don't umount devtmpfs
+if { s6-umount /dev/shm }
+if { s6-umount /dev/pts }
+if { s6-umount /dev/mqueue }
