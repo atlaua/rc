@@ -1,4 +1,4 @@
 #!/bin/execlineb -P
 
-foreground { /etc/s6/rc.tini" }
+foreground { /etc/s6/rc.tini }
 s6-svscanctl -h -- /run/s6/service
