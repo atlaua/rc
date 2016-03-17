@@ -1,5 +1,6 @@
 mount-dev
 mount-proc
+mount-tmp
 mount-sys
 
 #mount-portage

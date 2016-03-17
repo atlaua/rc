@@ -22,3 +22,4 @@ if
 }
 
 if { loadkeys -q ${keymap} }
+if { ctrlaltdel soft }
