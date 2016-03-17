@@ -9,7 +9,6 @@ foreground { s6-echo "Sending all processes the KILL signal." }
 foreground { s6-nuke -k }
 wait { }
 
-foreground { /etc/s6/rescue }
 foreground { s6-echo "Syncing disks." }
 foreground { s6-sync }
 foreground { s6-echo "Unmounting disks." }
