@@ -1,0 +1,2 @@
+if { redirfd -r 0 /var/lib/iptables/rules-save iptables-restore }
+if { redirfd -r 0 /var/lib/ip6tables/rules-save ip6tables-restore }

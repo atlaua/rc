@@ -1,0 +1,16 @@
+/sys/class
+/sys/class/power_supply
+/sys/devices/LNXSYSTM:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/PNP0C0A:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/PNP0C0A:00/power_supply
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/PNP0C0A:00/power_supply/BAT0
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/ACPI0003:00
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/ACPI0003:00/power_supply
+/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:08/PNP0C09:00/ACPI0003:00/power_supply/AC
+/sys/devices/virtual
+/sys/devices/virtual/thermal
+/sys/devices/virtual/thermal/thermal_zone0

@@ -6,6 +6,8 @@ mount-sys
 #mount-portage
 mount-swap
 
+init-eth0
+init-iptables
 init-sysctl
 init-tty
-init-net
+init-wlan0

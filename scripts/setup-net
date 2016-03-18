@@ -1,0 +1,12 @@
+#!/bin/execlineb -P
+
+multisubstitute
+{
+    import -is addr
+    import -is dev
+    import -is route
+}
+
+if { ip addr add dev ${dev} ${addr} }
+if { ip route add dev ${dev} ${route} }
+if { ip link set dev ${dev} up }
