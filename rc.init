@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
 
 if { s6-rc-init -t 5000 -c /etc/s6/compiled -l /run/s6/s6-rc /run/s6/service }
-if { s6-rc -u change ok-all }
+if { s6-rc -l /run/s6/s6-rc -u change ok-all }
 foreground { chvt 6 }
