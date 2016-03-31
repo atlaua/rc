@@ -3,11 +3,14 @@ mount-proc
 mount-tmp
 mount-sys
 
-#mount-portage
+mount-portage
 mount-swap
 
+init-dev
 init-eth0
 init-iptables
 init-sysctl
 init-tty
 init-wlan0
+
+udevd
