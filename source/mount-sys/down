@@ -1,2 +1,0 @@
-# don't umount sysfs and selinuxfs
-s6-umount /sys/kernel/security
