@@ -2,9 +2,9 @@
 
 multisubstitute
 {
-    import -is addr
-    import -is dev
-    import -is route
+    importas -is addr addr
+    importas -is dev dev
+    importas -is route route
 }
 
 if { ip addr add dev ${dev} ${addr} }

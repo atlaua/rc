@@ -1,4 +1,4 @@
 s6-envdir /etc/s6/env/net/wlan0
-import -i module
+importas -i module module
 
 if { modprobe ${module} }

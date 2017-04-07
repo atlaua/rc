@@ -1,12 +1,12 @@
 s6-envdir /etc/s6/env/tty
 multisubstitute
 {
-    import -i encoding
-    import -i font
-    import -i kbd
-    import -is keymap
-    import -i module
-    import -is ttys
+    importas -i encoding encoding
+    importas -i font font
+    importas -i kbd kbd
+    importas -is keymap keymap
+    importas -i module module
+    importas -is ttys ttys
 }
 
 if { modprobe ${module} }
@@ -14,7 +14,7 @@ if { modprobe ${module} }
 if
 {
     forx -po 0 tty { ${ttys} }
-    import -i tty
+    importas -i tty tty
 
     if { redirfd -w 1 /dev/${tty} s6-echo -n "\0x1b%${encoding}" }
     if { setfont ${font} -C /dev/${tty} }

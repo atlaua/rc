@@ -1,3 +1,3 @@
 s6-envdir /etc/s6/env/disks
-import -i swap
+importas -i swap swap
 s6-swapoff /dev/${swap}
