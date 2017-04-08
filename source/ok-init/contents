@@ -3,9 +3,6 @@ mount-proc
 mount-tmp
 mount-sys
 
-mount-portage
-mount-swap
-
 init-dev
 init-eth0
 init-fsck
