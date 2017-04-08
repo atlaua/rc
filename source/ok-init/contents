@@ -15,4 +15,5 @@ init-tty
 init-wlan0
 
 auditd
+syslog-ng
 udevd
