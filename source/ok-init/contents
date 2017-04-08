@@ -9,6 +9,7 @@ mount-swap
 init-dev
 init-eth0
 init-iptables
+init-sys
 init-sysctl
 init-tty
 init-wlan0

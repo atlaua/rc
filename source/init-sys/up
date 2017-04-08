@@ -1,0 +1,4 @@
+s6-envdir -fi /etc/s6/env/sysfs
+importas -is -d "\n" dirs chmod_dirs
+foreground { chmod 0755 ${dirs} }
+s6-true

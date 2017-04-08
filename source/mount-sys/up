@@ -1,7 +1,3 @@
 # sysfs and selinuxfs are already mounted
 if { s6-mount -t securityfs none /sys/kernel/security }
 if { restorecon -F /sys/devices/system/cpu/online }
-
-s6-envdir -fi /etc/s6/env/sysfs
-importas -is -d "\n" chmod_dirs dirs
-chmod 0755 ${dirs}
