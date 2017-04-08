@@ -1,0 +1,5 @@
+s6-envdir /etc/s6/env/disks
+importas -i home home
+importas -s home_opts home_opts
+
+s6-mount -o noatime,nodev $home_opts $home /home

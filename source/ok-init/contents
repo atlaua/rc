@@ -2,6 +2,7 @@ mount-dev
 mount-proc
 mount-tmp
 mount-sys
+remount-root
 
 init-dev
 init-eth0

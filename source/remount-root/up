@@ -1,0 +1,5 @@
+s6-envdir /etc/s6/env/disks
+importas -i root root
+importas -s root_opts root_opts
+
+s6-mount -o remount,rw,noatime $root_opts $root /
