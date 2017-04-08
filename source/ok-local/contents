@@ -8,3 +8,4 @@ getty-tty3
 getty-tty4
 getty-tty5
 getty-tty6
+postfix

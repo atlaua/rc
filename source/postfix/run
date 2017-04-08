@@ -1,0 +1,3 @@
+#!/bin/execlineb -P
+
+/usr/libexec/postfix/master
