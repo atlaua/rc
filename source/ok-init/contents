@@ -6,6 +6,7 @@ remount-root
 
 init-audit
 init-dev
+init-dirs
 init-eth0
 init-fsck
 init-iptables

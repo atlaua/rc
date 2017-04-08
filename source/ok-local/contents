@@ -1,3 +1,5 @@
+init-alsa
+
 mount-home
 mount-portage
 mount-swap
