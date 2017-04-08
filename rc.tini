@@ -1,3 +1,4 @@
 #!/bin/execlineb -P
 
+foreground { s6-echo "Shutting down s6-rc services..." }
 s6-rc -l /run/s6/s6-rc -da change
