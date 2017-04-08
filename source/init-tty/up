@@ -5,6 +5,7 @@ multisubstitute
     importas -i font font
     importas -i kbd kbd
     importas -is keymap keymap
+    importas -i loglevel loglevel
     importas -i module module
     importas -is ttys ttys
 }
@@ -23,3 +24,4 @@ if
 
 if { loadkeys -q ${keymap} }
 if { ctrlaltdel soft }
+if { dmesg -n ${loglevel} }
