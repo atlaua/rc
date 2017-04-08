@@ -1,0 +1,4 @@
+init-dev
+mount-proc
+mount-sys
+remount-root

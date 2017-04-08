@@ -1,0 +1,3 @@
+#!/bin/execlineb -P
+
+auditctl -R /etc/audit/audit.rules.stop.post

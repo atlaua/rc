@@ -4,6 +4,7 @@ mount-tmp
 mount-sys
 remount-root
 
+init-audit
 init-dev
 init-eth0
 init-fsck
@@ -13,4 +14,5 @@ init-sysctl
 init-tty
 init-wlan0
 
+auditd
 udevd

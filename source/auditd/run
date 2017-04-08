@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+
+export LANG C
+export LC_ALL C
+
+auditd -n
