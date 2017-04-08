@@ -1,0 +1,22 @@
+s6-envdir /etc/s6/env/fsck
+importas -is e2fsck_readonly e2fsck_readonly
+importas -is e2fsck_repair e2fsck_repair
+
+if
+{
+    forx -o 0 dev { ${e2fsck_readonly} }
+    importas -i dev dev
+
+    e2fsck -n $dev
+}
+
+if
+{
+    forx -o 0 dev { ${e2fsck_repair} }
+    importas -i dev dev
+
+    foreground { e2fsck -p $dev }
+
+    importas -i ? ?
+    s6-test ( $? -eq 0 ) -o ( $? -eq 1 )
+}

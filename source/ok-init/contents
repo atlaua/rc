@@ -8,6 +8,7 @@ mount-swap
 
 init-dev
 init-eth0
+init-fsck
 init-iptables
 init-sys
 init-sysctl
