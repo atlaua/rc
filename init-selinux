@@ -23,6 +23,8 @@ foreground
 emptyenv -p
 s6-envdir /etc/s6/env/init
 
+redirfd -wnb 1 /run/s6/service/s6-svscan-log/fifo
+
 background
 {
     s6-setsid --
@@ -32,7 +34,6 @@ background
 }
 
 emptyenv -c
-redirfd -wnb 1 /run/s6/service/s6-svscan-log/fifo
 fdmove -c 2 1
 cd /run/s6/service
 s6-svscan -st0
