@@ -1,7 +1,6 @@
 mount-home
 mount-portage
 mount-swap
-net-lo
 
 getty-tty3
 getty-tty4

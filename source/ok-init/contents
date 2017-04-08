@@ -13,6 +13,7 @@ init-sys
 init-sysctl
 init-tty
 init-wlan0
+net-lo
 
 auditd
 syslog-ng
