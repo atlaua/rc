@@ -4,9 +4,7 @@ multisubstitute
 {
     importas -is addr addr
     importas -i dev dev
-    importas -is route route
 }
 
 if { ip addr add dev ${dev} ${addr} }
-if { ip route add dev ${dev} ${route} }
 if { ip link set dev ${dev} up }
