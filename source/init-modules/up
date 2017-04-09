@@ -1,0 +1,4 @@
+s6-envdir /etc/s6/env/modules
+importas -is modules modules
+
+modprobe -a ${modules}

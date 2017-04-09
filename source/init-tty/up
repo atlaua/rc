@@ -6,11 +6,8 @@ multisubstitute
     importas -i kbd kbd
     importas -is keymap keymap
     importas -i loglevel loglevel
-    importas -i module module
     importas -is ttys ttys
 }
-
-if { modprobe ${module} }
 
 if
 {
