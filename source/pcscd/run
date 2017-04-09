@@ -1,0 +1,10 @@
+#!/bin/execlineb -P
+
+s6-envuidgid pcscd
+foreground { s6-mkdir /run/pcscd }
+if { s6-chmod 0755 /run/pcscd }
+if { s6-chown -U /run/pcscd }
+
+emptyenv -c
+s6-applyuidgid -zU
+pcscd --foreground
