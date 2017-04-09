@@ -4,6 +4,7 @@ mount-home
 mount-portage
 mount-swap
 
+cronie
 getty-tty3
 getty-tty4
 getty-tty5
