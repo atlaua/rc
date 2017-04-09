@@ -1,6 +1,9 @@
 s6-envdir /etc/s6/env/fsck
-importas -is e2fsck_readonly e2fsck_readonly
-importas -is e2fsck_repair e2fsck_repair
+multisubstitute
+{
+    importas -is e2fsck_readonly e2fsck_readonly
+    importas -is e2fsck_repair e2fsck_repair
+}
 
 if
 {
