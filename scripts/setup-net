@@ -3,7 +3,7 @@
 multisubstitute
 {
     importas -is addr addr
-    importas -is dev dev
+    importas -i dev dev
     importas -is route route
 }
 
