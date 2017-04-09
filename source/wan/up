@@ -1,0 +1,4 @@
+s6-envdir /etc/s6/env/net/wan
+importas -i gateway gateway
+
+ip route add default via ${gateway}
