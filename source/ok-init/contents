@@ -14,6 +14,7 @@ init-modules
 init-sys
 init-sysctl
 init-tty
+init-urandom
 net-lo
 
 auditd
