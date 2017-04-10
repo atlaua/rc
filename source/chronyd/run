@@ -4,4 +4,4 @@ foreground { s6-mkdir /run/chrony }
 if { s6-chmod 0700 /run/chrony }
 if { s6-envuidgid chrony s6-chown -U /run/chrony }
 
-chronyd -d -u chrony -s -r
+/usr/sbin/chronyd -d -u chrony -s -r

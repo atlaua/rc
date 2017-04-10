@@ -7,4 +7,4 @@ if { s6-chown -U /run/pcscd }
 
 emptyenv -c
 s6-applyuidgid -zU
-pcscd --foreground
+/usr/sbin/pcscd --foreground

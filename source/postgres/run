@@ -7,4 +7,4 @@ if { s6-chown -U /run/postgresql }
 
 emptyenv -c
 s6-applyuidgid -zU
-postgres -D /etc/postgresql
+/usr/bin/postgres -D /etc/postgresql
