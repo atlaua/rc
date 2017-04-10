@@ -1,0 +1,10 @@
+#!/bin/execlineb -P
+
+s6-envuidgid postgres
+foreground { s6-mkdir /run/postgresql }
+if { s6-chmod 1775 /run/postgresql }
+if { s6-chown -U /run/postgresql }
+
+emptyenv -c
+s6-applyuidgid -zU
+postgres -D /etc/postgresql
