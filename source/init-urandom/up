@@ -1,3 +1,8 @@
-redirfd -r 0 /var/lib/misc/random-seed
-redirfd -w 1 /dev/urandom
-s6-cat
+if
+{
+    redirfd -r 0 /var/lib/misc/random-seed
+    redirfd -w 1 /dev/urandom
+    s6-cat
+}
+
+s6-fillurandompool
