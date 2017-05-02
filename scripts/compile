@@ -1,0 +1,11 @@
+#!/bin/execlineb -P
+
+cd /etc/s6
+backtick -in date { s6-clock }
+importas -iu date date
+
+if { s6-rc-compile compiled-${date} source }
+if { s6-ln -s compiled-${date} compiled.n }
+foreground { s6-rename compiled.n compiled }
+
+restorecon -RF .

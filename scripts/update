@@ -1,12 +1,6 @@
 #!/bin/execlineb -P
 
-cd /etc/s6
-backtick -in date { s6-clock }
-importas -iu date date
+backtick -in db { realpath /etc/s6/compiled }
+importas -iu db db
 
-if { s6-rc-compile compiled-${date} source }
-if { restorecon -RF . }
-
-if { run_init s6-rc-update -l /run/s6/s6-rc /etc/s6/compiled-${date} }
-if { s6-ln -s compiled-${date} compiled.n }
-s6-rename compiled.n compiled
+if { run_init s6-rc-update -l /run/s6/s6-rc ${db} }
