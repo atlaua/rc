@@ -11,7 +11,6 @@ init-eth0
 init-fsck
 init-iptables
 init-modules
-init-sys
 init-sysctl
 init-tty
 init-urandom
