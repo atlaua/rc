@@ -1,2 +1,0 @@
-s6-envdir /etc/s6/env/net/wlan0
-/etc/s6/scripts/setup-net
