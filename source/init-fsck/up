@@ -1,5 +1,5 @@
 s6-envdir /etc/s6/env/fsck
-importas -is e2fsck_repair e2fsck_repair
+importas -s e2fsck_repair e2fsck_repair
 
 forx -o 0 dev { ${e2fsck_repair} }
 importas -i dev dev
