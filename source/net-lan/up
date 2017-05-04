@@ -1,2 +1,6 @@
 s6-envdir /etc/s6/env/host/net/lan
-/etc/s6/scripts/setup-net
+
+if { /etc/s6/scripts/setup-net }
+
+importas -i gateway gateway
+ip route replace default via ${gateway}
