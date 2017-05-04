@@ -12,4 +12,8 @@ if { s6-rc-compile compiled-${date} source }
 if { s6-ln -s compiled-${date} compiled.n }
 if { s6-rename compiled.n compiled }
 
+s6-envdir /etc/s6/env/host/services
+importas -ius additional add
+if { s6-rc-bundle -c /etc/s6/compiled -f add ok-all ok-all ${additional} }
+
 restorecon -RF .
