@@ -1,4 +1,4 @@
-s6-envdir /etc/s6/env/net/lan
+s6-envdir /etc/s6/env/host/net/lan
 importas -i dev dev
 
 ip link set dev ${dev} down

@@ -1,2 +1,2 @@
-s6-envdir /etc/s6/env/net/lo
+s6-envdir /etc/s6/env/host/net/lo
 /etc/s6/scripts/setup-net

@@ -1,4 +1,4 @@
-s6-envdir /etc/s6/env/disks
+s6-envdir /etc/s6/env/host/disks
 multisubstitute
 {
     importas -i home home

@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 
-s6-envdir /etc/s6/env/net/lan
+s6-envdir /etc/s6/env/host/net/lan
 importas -i dev dev
 
 /usr/sbin/wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i ${dev}
