@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 
-backtick -in db { realpath /etc/s6/compiled }
+backtick -in db { s6-linkname -f /etc/s6/compiled }
 importas -iu db db
 
 if { run_init s6-rc-update -l /run/s6/s6-rc ${db} }
