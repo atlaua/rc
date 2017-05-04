@@ -1,3 +1,10 @@
 #!/bin/execlineb -P
 
+foreground
+{
+    redirfd -w 1 /dev/tty1
+    if { s6-echo "\n\nReplaying boot log:" }
+    redirfd -r 0 /run/s6/uncaught-logs/current s6-tai64nlocal
+}
+
 /sbin/agetty --noissue --noclear tty1
