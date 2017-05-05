@@ -17,5 +17,5 @@ init-urandom
 net-lo
 
 auditd
-syslog-ng
+klogd
 udevd

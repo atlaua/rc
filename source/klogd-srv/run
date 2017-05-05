@@ -1,0 +1,8 @@
+#!/bin/execlineb -P
+
+s6-envuidgid logkern
+runcon -t s6_logger_kern_t
+
+redirfd -r 0 /proc/kmsg
+s6-applyuidgid -zU
+ucspilogd
