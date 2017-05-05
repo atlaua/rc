@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+
+s6-setuidgid logsys
+s6-log t s1000000 /var/log/syslog
