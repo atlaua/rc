@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+
+s6-setuidgid logsrv
+s6-log -- s1000000 t /var/log/unbound
