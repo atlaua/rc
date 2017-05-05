@@ -1,4 +1,4 @@
 #!/bin/execlineb -P
 
 s6-setuidgid logsys
-s6-log -- t s1000000 /var/log/syslog
+s6-log -- t s1000000 - +"^0: authpriv" /var/log/authpriv f /var/log/syslog
