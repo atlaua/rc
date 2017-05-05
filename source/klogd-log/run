@@ -1,4 +1,4 @@
 #!/bin/execlineb -P
 
 s6-setuidgid logkern
-s6-log -- t s1000000 -"^kern\.debug:" /var/log/kernel
+s6-log -- s1000000 -"^kern\.debug:" t /var/log/kernel
