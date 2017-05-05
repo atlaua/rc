@@ -1,3 +1,0 @@
-#!/bin/execlineb -P
-
-syslog-ng --cfgfile /etc/syslog-ng/syslog-ng.conf --persist-file /var/lib/syslog-ng/syslog-ng.persist --foreground
