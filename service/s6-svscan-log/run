@@ -4,7 +4,7 @@ redirfd -w 2 /dev/console
 fdmove -c 1 2
 redirfd -rnb 0 fifo
 
-s6-envuidgid logger
+s6-envuidgid logsrv
 foreground { s6-mkdir /run/s6/uncaught-logs }
 if { s6-chmod 2700 /run/s6/uncaught-logs }
 if { s6-chown -U /run/s6/uncaught-logs }
