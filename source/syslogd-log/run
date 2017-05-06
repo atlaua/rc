@@ -1,4 +1,6 @@
 #!/bin/execlineb -P
 
 s6-setuidgid logsys
-s6-log -- s1000000 t /var/log/syslog
+s6-log -- s1000000 -
+    +"^[0-9]*: mail" t /var/log/mail
+    f t /var/log/syslog
