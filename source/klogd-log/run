@@ -1,4 +1,6 @@
 #!/bin/execlineb -P
 
+foreground { fdmove -c 1 2 s6-echo "Starting service klogd-log" }
+
 s6-setuidgid logkern
 s6-log -- s1000000 -"^kern\.debug:" t /var/log/kernel

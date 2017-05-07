@@ -1,5 +1,6 @@
 #!/bin/execlineb -P
 
+foreground { fdmove -c 1 2 s6-echo "Starting service chronyd" }
 fdmove -c 2 1
 
 foreground { s6-mkdir /run/chrony }

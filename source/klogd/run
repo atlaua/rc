@@ -1,5 +1,6 @@
 #!/bin/execlineb -P
 
+foreground { fdmove -c 1 2 s6-echo "Starting service klogd" }
 fdmove -c 2 1
 
 s6-envuidgid logkern

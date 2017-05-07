@@ -1,4 +1,6 @@
 #!/bin/execlineb -P
 
+foreground { fdmove -c 1 2 s6-echo "Starting service sshd-log" }
+
 s6-setuidgid logsrv
 s6-log -- s1000000 t /var/log/sshd

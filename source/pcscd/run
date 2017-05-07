@@ -1,5 +1,6 @@
 #!/bin/execlineb -P
 
+foreground { fdmove -c 1 2 s6-echo "Starting service pcscd" }
 fdmove -c 2 1
 
 s6-envuidgid pcscd
