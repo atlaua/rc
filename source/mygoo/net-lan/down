@@ -1,0 +1,5 @@
+s6-envdir /etc/s6/env/host/net/lan
+importas -iu dev dev
+
+if { ip addr flush dev ${dev} }
+if { ip link set dev ${dev} down }
