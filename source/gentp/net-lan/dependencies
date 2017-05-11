@@ -1,3 +1,5 @@
 init-dev
 init-iptables
 init-sysctl
+
+wpa_supplicant

@@ -1,4 +1,28 @@
 s6-envdir /etc/s6/env/host/net/lan
+
+if { s6-mkfifodir -f -g 0 /run/s6/wpa-event }
+background
+{
+    fdclose 1
+    wpa_cli -p /run/wpa_supplicant -a /etc/s6/scripts/wpa-event
+}
+importas -iu wpa_cli_pid !
+
+backtick -in net
+{
+    s6-ftrig-listen1 -t 60000 /run/s6/wpa-event "[0-9]"
+    fdclose 1
+
+    importas -isu list list
+    forx net { ${list} }
+    importas -iu net net
+    wpa_cli -p /run/wpa_supplicant enable_network ${net}
+}
+
+if { kill ${wpa_cli_pid} }
+
+importas -iu net net
+s6-envdir /etc/s6/env/host/net/lan${net}
 multisubstitute
 {
     importas -isu addr addr

@@ -1,0 +1,6 @@
+#!/bin/execlineb -S2
+
+if { s6-test ${2} = CONNECTED }
+
+importas -iu net WPA_ID
+s6-ftrig-notify /run/s6/wpa-event ${net}

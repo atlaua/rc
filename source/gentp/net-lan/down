@@ -1,5 +1,17 @@
 s6-envdir /etc/s6/env/host/net/lan
-importas -iu dev dev
+multisubstitute
+{
+    importas -iu dev dev
+    importas -isu list list
+}
+
+foreground
+{
+    fdclose 1
+    forx net { ${list} }
+    importas -iu net net
+    wpa_cli -p /run/wpa_supplicant disable_network ${net}
+}
 
 if { ip addr flush dev ${dev} }
 if { ip link set dev ${dev} down }
