@@ -21,7 +21,7 @@ foreground
     s6-dumpenv /run/s6/env
 }
 emptyenv -p
-s6-envdir /etc/s6/env/init
+s6-envdir /etc/s6/env/common/init
 
 redirfd -wnb 1 /run/s6/service/s6-svscan-log/fifo
 

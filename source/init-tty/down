@@ -1,4 +1,4 @@
-s6-envdir /etc/s6/env/tty
+s6-envdir /etc/s6/env/common/tty
 importas -i loglevel_down loglevel_down
 
 dmesg -n ${loglevel_down}

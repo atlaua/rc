@@ -1,4 +1,4 @@
-s6-envdir /etc/s6/env/tty
+s6-envdir /etc/s6/env/common/tty
 multisubstitute
 {
     importas -i encoding encoding
