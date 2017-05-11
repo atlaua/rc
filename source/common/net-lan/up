@@ -1,6 +1,11 @@
 s6-envdir /etc/s6/env/host/net/lan
+multisubstitute
+{
+    importas -isu addr addr
+    importas -iu dev dev
+    importas -iu gateway gateway
+}
 
-if { /etc/s6/scripts/setup-net }
-
-importas -i gateway gateway
-ip route replace default via ${gateway}
+if { ip addr replace dev ${dev} ${addr} }
+if { ip link set dev ${dev} up }
+if { ip route replace default via ${gateway} }

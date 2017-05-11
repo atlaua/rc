@@ -1,2 +1,9 @@
 s6-envdir /etc/s6/env/host/net/lo
-/etc/s6/scripts/setup-net
+multisubstitute
+{
+    importas -isu addr addr
+    importas -iu dev dev
+}
+
+if { ip addr replace dev ${dev} ${addr} }
+if { ip link set dev ${dev} up }

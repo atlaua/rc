@@ -1,5 +1,5 @@
 s6-envdir /etc/s6/env/host/net/lan
-importas -i dev dev
+importas -iu dev dev
 
-foreground { ip route del default }
-ip link set dev ${dev} down
+if { ip addr flush dev ${dev} }
+if { ip link set dev ${dev} down }
