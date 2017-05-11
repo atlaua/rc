@@ -8,7 +8,7 @@ if { ln -snf ${host} env/host }
 
 backtick -in date { s6-clock }
 importas -iu date date
-if { s6-rc-compile compiled-${date} source }
+if { s6-rc-compile compiled-${date} source/common source/${host} }
 if { s6-ln -s compiled-${date} compiled.n }
 if { s6-rename compiled.n compiled }
 
