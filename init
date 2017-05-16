@@ -1,7 +1,7 @@
 #!/bin/execlineb -P
 
-/bin/cd /
-/bin/export PATH "/bin:/sbin"
+/bin/export PATH "/bin:/sbin:/usr/bin:/usr/sbin"
+cd /
 s6-setsid -b --
 umask 022
 if { s6-echo -- "\ns6 init booting up...\n" }
