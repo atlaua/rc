@@ -1,5 +1,5 @@
 init-dev
-init-iptables
+init-firewall
 init-sysctl
 
 wpa_supplicant

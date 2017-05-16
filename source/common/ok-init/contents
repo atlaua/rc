@@ -9,7 +9,7 @@ init-dev
 init-dirs
 init-eth0
 init-fsck
-init-iptables
+init-firewall
 init-modules
 init-sysctl
 init-tty
