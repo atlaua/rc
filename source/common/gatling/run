@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+
+foreground { fdmove -c 1 2 s6-echo "Starting service gatling" }
+fdmove -c 2 1
+
+/usr/bin/gatling -u gatling -c /home/www -F -S -d -V
