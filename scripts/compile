@@ -4,12 +4,11 @@ cd /etc/s6
 
 backtick -in host { s6-hostname }
 importas -iu host host
-if { ln -snf ${host} env/host }
+if { s6-ln -snf ${host} env/host }
 
 backtick -in date { s6-clock }
 importas -iu date date
 if { s6-rc-compile compiled-${date} source/common source/${host} }
-if { s6-ln -s compiled-${date} compiled.n }
-if { s6-rename compiled.n compiled }
+if { s6-ln -snf compiled-${date} compiled }
 
 restorecon -RF .
