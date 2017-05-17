@@ -1,2 +1,2 @@
 umask 0077
-dd if=/dev/urandom of=/var/lib/misc/random-seed bs=32 count=32 status=none
+dd if=/dev/urandom of=/var/cache/random-seed bs=32 count=32 status=none
