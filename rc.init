@@ -1,8 +1,5 @@
 #!/bin/execlineb -P
 
 foreground { s6-echo "Initializing s6-rc..." }
-backtick -in db { s6-linkname -f /etc/s6/compiled }
-importas -iu db db
-
-if { s6-rc-init -t 5000 -c ${db} -l /run/s6/s6-rc /run/s6/service }
+if { s6-rc-init -t 5000 -d -c /etc/s6/compiled -l /run/s6/s6-rc /run/s6/service }
 if { s6-rc -l /run/s6/s6-rc -u change ok-all }
