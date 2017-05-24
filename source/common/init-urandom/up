@@ -5,4 +5,5 @@ if
     s6-cat
 }
 
+if { rm -f /var/cache/random-seed }
 s6-fillurandompool
