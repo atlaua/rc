@@ -8,7 +8,7 @@ background
 }
 importas -iu wpa_cli_pid !
 
-backtick -in net
+backtick -D 0 -n net
 {
     s6-ftrig-listen1 -t 60000 /run/s6/wpa-event "[0-9]"
     fdclose 1
