@@ -1,9 +1,9 @@
 foreground
 {
-    redirfd -r 0 /var/cache/random-seed
+    redirfd -r 0 /var/lib/misc/random-seed
     redirfd -w 1 /dev/urandom
     s6-cat
 }
 
-foreground { rm -f /var/cache/random-seed }
+foreground { rm -f /var/lib/misc/random-seed }
 s6-fillurandompool
