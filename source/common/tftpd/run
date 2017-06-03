@@ -1,0 +1,5 @@
+#!/bin/execlineb -P
+
+foreground { fdmove -c 1 2 s6-echo "Starting service tftpd" }
+
+/usr/sbin/in.tftpd --foreground --user tftpd --secure /home/tftp
