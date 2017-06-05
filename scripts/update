@@ -2,7 +2,7 @@
 
 cd /etc/s6
 
-backtick -in host { s6-hostname }
+backtick -in host { hostname -s }
 backtick -in date { s6-clock }
 multisubstitute
 {
