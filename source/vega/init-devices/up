@@ -1,0 +1,10 @@
+if { ethtool -s eth0 wol d }
+
+if { redirfd -w 1 /sys/devices/platform/dock.1/undock s6-echo 1 }
+
+if
+{
+    redirfd -r 0 /sys/class/backlight/intel_backlight/max_brightness
+    redirfd -w 1 /sys/class/backlight/intel_backlight/brightness
+    s6-cat
+}

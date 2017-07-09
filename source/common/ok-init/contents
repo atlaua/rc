@@ -6,8 +6,8 @@ remount-root
 
 init-audit
 init-dev
+init-devices
 init-dirs
-init-eth0
 init-fsck
 init-firewall
 init-modules
