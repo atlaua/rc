@@ -1,2 +1,2 @@
 if { ethtool -s eth0 wol d }
-if { hdparm -S60 /dev/sdb }
+if { hdparm -q -S60 /dev/sdb }
