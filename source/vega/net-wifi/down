@@ -1,4 +1,4 @@
-s6-envdir /etc/s6/env/host/net/lan
+s6-envdir /etc/s6/env/host/net/wifi
 multisubstitute
 {
     importas -iu dev dev

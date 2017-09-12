@@ -4,7 +4,7 @@ foreground { fdmove -c 1 2 s6-echo "Starting service wpa_supplicant" }
 fdmove -c 2 1
 
 export READINESS_NOTIFICATION ""
-s6-envdir /etc/s6/env/host/net/lan
+s6-envdir /etc/s6/env/host/net/wifi
 importas -i dev dev
 
 /usr/sbin/wpa_supplicant -c /etc/wpa_supplicant/wpa_supplicant.conf -i ${dev}
