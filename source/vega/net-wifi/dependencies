@@ -1,5 +1,0 @@
-init-dev
-init-firewall
-init-sysctl
-
-wpa_supplicant

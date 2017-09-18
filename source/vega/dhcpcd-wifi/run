@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+
+foreground { fdmove -c 1 2 s6-echo "Starting service dhcpcd-wifi" }
+fdmove -c 2 1
+
+/sbin/dhcpcd -B wlan0
