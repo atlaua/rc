@@ -1,4 +1,4 @@
-net-lan
+net-eth
 
 chronyd
 unbound
