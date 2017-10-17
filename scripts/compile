@@ -1,0 +1,16 @@
+#!/bin/execlineb -P
+
+cd /etc/s6
+
+backtick -in date { s6-clock }
+backtick -in host { hostname -s }
+multisubstitute
+{
+    importas -iu date date
+    importas -iu host host
+}
+
+if { s6-ln -snf ${host} env/host }
+if { s6-rc-compile compiled-$date source/common source/${host} }
+if { restorecon -RF . }
+if { s6-ln -snf compiled-$date compiled.new }

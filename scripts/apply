@@ -1,0 +1,8 @@
+#!/bin/execlineb -S0
+
+cd /etc/s6
+
+backtick -in newdb { readlink -f compiled.new }
+importas -iu newdb newdb
+
+run_init s6-rc-update -v2 -l /run/s6/s6-rc $@ $newdb

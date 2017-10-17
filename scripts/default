@@ -1,0 +1,9 @@
+#!/bin/execlineb -S0
+
+cd /etc/s6
+
+backtick -in newdb { readlink -f compiled.new }
+importas -iu newdb newdb
+
+if { s6-ln -snf $newdb compiled }
+if { rm compiled.new }
