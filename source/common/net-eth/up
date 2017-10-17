@@ -13,7 +13,7 @@ if
     if { ip addr replace dev ${dev} ${addr} }
 }
 
-if { ip link set dev ${dev} up }
+if { ip link set dev ${dev} up addrgenmode stable_secret }
 
 if
 {
