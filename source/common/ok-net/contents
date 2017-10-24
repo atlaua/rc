@@ -1,7 +1,5 @@
 net-eth
-net-eth-ipv6
 
-babeld
 chronyd
 sshd
 unbound

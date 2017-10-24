@@ -3,7 +3,7 @@ multisubstitute
 {
     importas -isu -d"\n" addrs addrs
     importas -iu dev dev
-    importas -su -d"\n" gateways gateways
+    importas -isu -d"\n" gateways gateways
 }
 
 if
