@@ -1,9 +1,0 @@
-#!/bin/execlineb -P
-
-foreground { fdmove -c 1 2 s6-echo "Starting service dhcpcd-wifi" }
-fdmove -c 2 1
-
-s6-envdir /etc/s6/env/host/net/wifi
-importas -i dev dev
-
-/sbin/dhcpcd -B ${dev}
