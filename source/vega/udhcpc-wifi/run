@@ -6,4 +6,4 @@ fdmove -c 2 1
 s6-envdir /etc/s6/env/host/net/wifi
 importas -i dev dev
 
-/usr/local/sbin/udhcpc -f -i ${dev}
+/usr/local/sbin/udhcpc -f -x lease:86400 -i ${dev}
