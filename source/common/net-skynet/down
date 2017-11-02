@@ -1,0 +1,1 @@
+ip link delete dev wg_skynet

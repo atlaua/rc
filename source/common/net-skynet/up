@@ -1,0 +1,14 @@
+s6-envdir -f /etc/s6/env/host/net/skynet
+importas -isu -d"\n" addrs addrs
+
+if { ip link add dev wg_skynet type wireguard }
+if { wg setconf wg_skynet /etc/wireguard/wg_skynet.conf }
+if { wg set wg_skynet private-key /etc/wireguard/wg_skynet.key }
+
+if
+{
+    forx -o0 addr { ${addrs} }
+    importas -iu addr addr
+    ip addr add dev wg_skynet ${addr}
+}
+if { ip link set up dev wg_skynet }
