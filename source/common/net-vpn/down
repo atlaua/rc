@@ -1,0 +1,6 @@
+if { ip link delete dev wg_vpn }
+
+forx -o0 family { inet }
+importas -iu family
+if { ip -f ${family} rule delete pref 100 }
+if { ip -f ${family} route flush table vpn }

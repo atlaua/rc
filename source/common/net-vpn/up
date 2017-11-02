@@ -1,0 +1,21 @@
+s6-envdir -f /etc/s6/env/host/net/vpn
+importas -isu -d"\n" addrs addrs
+
+if { ip link add dev wg_vpn type wireguard }
+if { wg setconf wg_vpn /etc/wireguard/wg_vpn.conf }
+if { wg set wg_vpn private-key /etc/wireguard/wg_vpn.key }
+
+# TODO: ipv6 prefix
+if
+{
+    forx -o0 addr { ${addrs} }
+    importas -iu addr addr
+    ip addr add dev wg_vpn ${addr}
+}
+if { ip link set up dev wg_vpn }
+
+# TODO: inet6
+forx -o0 family { inet }
+importas -iu family
+if { ip -f ${family} route add default dev wg_vpn table vpn }
+if { ip -f ${family} rule add not fwmark 100 pref 100 table vpn }
