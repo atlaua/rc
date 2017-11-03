@@ -21,3 +21,5 @@ if
     importas -iu gateway gateway
     if { ip route replace default via ${gateway} }
 }
+
+s6-sleep 5
