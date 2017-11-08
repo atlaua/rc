@@ -1,1 +1,2 @@
+redirfd -w 1 /dev/null
 auditctl -R /etc/audit/audit.rules.stop.pre
