@@ -1,0 +1,2 @@
+if { mount -o ro,bind /var/portage/distfiles /home/www/distfiles }
+if { mount -o ro,bind /var/portage/packages  /home/www/packages  }
