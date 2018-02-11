@@ -2,5 +2,6 @@ net-eth
 net-skynet
 
 chronyd
+crond
 sshd
 unbound
