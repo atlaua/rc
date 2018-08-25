@@ -17,4 +17,4 @@ init-urandom
 net-lo
 
 auditd
-udevd
+mdevd
