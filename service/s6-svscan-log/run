@@ -5,10 +5,10 @@ fdmove -c 1 2
 redirfd -rnb 0 fifo
 
 s6-envuidgid logsrv
-foreground { s6-mkdir /run/s6/uncaught-logs }
-if { s6-chmod 2700 /run/s6/uncaught-logs }
-if { s6-chown -U /run/s6/uncaught-logs }
+foreground { s6-mkdir /run/s6/log }
+if { s6-chmod 2700 /run/s6/log }
+if { s6-chown -U /run/s6/log }
 
 emptyenv -c
 s6-applyuidgid -zU
-s6-log -bp -- 1 t /run/s6/uncaught-logs
+s6-log -bp -- 1 t /run/s6/log
