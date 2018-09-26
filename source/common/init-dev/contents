@@ -1,2 +1,8 @@
 init-coldplug
+init-dev-ptmx
+init-dev-symlinks
 init-modules
+
+mount-devpts
+mount-mqueue
+mount-shm

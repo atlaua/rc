@@ -1,4 +1,3 @@
-mount-dev
 mount-tmp
 mount-sys
 remount-root

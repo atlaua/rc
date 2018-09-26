@@ -1,0 +1,2 @@
+foreground { s6-mkdir /dev/mqueue }
+if { s6-mount -t mqueue -o nodev,noexec,nosuid none /dev/mqueue }

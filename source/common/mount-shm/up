@@ -1,0 +1,2 @@
+foreground { s6-mkdir /dev/shm }
+if { s6-mount -t tmpfs -o nodev,noexec,nosuid,mode=1777 none /dev/shm }

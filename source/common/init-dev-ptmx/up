@@ -1,0 +1,2 @@
+if { restorecon -F /dev/pts/ptmx }
+if { s6-ln -sf pts/ptmx /dev/ptmx }

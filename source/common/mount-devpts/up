@@ -1,0 +1,2 @@
+foreground { s6-mkdir /dev/pts }
+if { s6-mount -t devpts -o noexec,nosuid,gid=5,mode=0620,newinstance,ptmxmode=0666 none /dev/pts }
