@@ -12,5 +12,3 @@ if { s6-ln -s /proc/self/fd /dev/fd }
 if { s6-ln -s fd/0 /dev/stdin }
 if { s6-ln -s fd/1 /dev/stdout }
 if { s6-ln -s fd/2 /dev/stderr }
-
-if { s6-ln -s rtc0 /dev/rtc }
