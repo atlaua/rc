@@ -1,0 +1,6 @@
+#!/bin/execlineb -P
+
+foreground { fdmove -c 1 2 s6-echo "Starting service httpd-4" }
+fdmove -c 2 1
+
+/usr/local/sbin/httpd 0.0.0.0
