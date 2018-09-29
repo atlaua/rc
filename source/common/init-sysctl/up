@@ -1,2 +1,6 @@
 if { sysctl -qp }
 if { redirfd -w 1 /sys/kernel/mm/hugepages/hugepages-2048kB/nr_overcommit_hugepages s6-echo 500 }
+
+s6-envdir /etc/s6/env/host/sysctl
+importas -iu hostname hostname
+sysctl -q "kernel.hostname=${hostname}"
